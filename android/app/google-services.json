@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "772498197174",
+    "project_id": "speakdata-f1d03",
+    "storage_bucket": "speakdata-f1d03.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:772498197174:android:c383c9b06eb3347b023417",
+        "android_client_info": {
+          "package_name": "com.mycompany.speak3"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "772498197174-t48rmujsoou4u34a8df4on9sjrbsfkmq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mycompany.speak3",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "772498197174-uqien4qoo7fimgok7qccm1u906obk4rh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMibADOPUxDZmwqY6fITCP3tElEKLLhy4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "772498197174-uqien4qoo7fimgok7qccm1u906obk4rh.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "772498197174-duv2ftcgs6hlitke6pd817ancku28k15.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mycompany.speak3"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
