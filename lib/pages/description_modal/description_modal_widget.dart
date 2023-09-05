@@ -379,7 +379,7 @@ class _DescriptionModalWidgetState extends State<DescriptionModalWidget> {
                   tabletLandscape: false,
                 ))
                   Container(
-                    width: double.infinity,
+                    width: MediaQuery.sizeOf(context).width * 1.0,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).secondaryBackground,
                       boxShadow: [

@@ -234,7 +234,7 @@ class _UserPageWidgetState extends State<UserPageWidget>
                                 child: Image.network(
                                   valueOrDefault<String>(
                                     rowUsersRecord?.photoUrl,
-                                    'https://mybroadband.co.za/news/wp-content/uploads/2017/04/Twitter-profile-picture.jpg',
+                                    'https://i.postimg.cc/mkGZByjZ/Twitter-profile-picture.webp',
                                   ),
                                   width: 100.0,
                                   height: 100.0,

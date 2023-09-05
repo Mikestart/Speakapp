@@ -405,6 +405,7 @@ class _SignupPageWidgetState extends State<SignupPageWidget> {
                               .update(createUsersRecordData(
                                 nomEntreprise: _model.signupNameController.text,
                                 displayName: _model.signupNameController.text,
+                                isAdmin: false,
                               ));
 
                           context.pushNamedAuth('userPage', context.mounted);

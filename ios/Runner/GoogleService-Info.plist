@@ -3,23 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>772498197174-duv2ftcgs6hlitke6pd817ancku28k15.apps.googleusercontent.com</string>
+	<string>28958942252-c1ck6hhrcbkfpcds93m9640n68fks73o.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.772498197174-duv2ftcgs6hlitke6pd817ancku28k15</string>
+	<string>com.googleusercontent.apps.28958942252-c1ck6hhrcbkfpcds93m9640n68fks73o</string>
 	<key>ANDROID_CLIENT_ID</key>
-	<string>772498197174-t48rmujsoou4u34a8df4on9sjrbsfkmq.apps.googleusercontent.com</string>
+	<string>28958942252-h5qfnd93hh4qb5fklncv8pr0d1tidho6.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
-	<string>AIzaSyBTRuZ3svb51vLzCLxyu9q0eWUtFCYjDwo</string>
+	<string>AIzaSyDAhDlPi15pbzFEEuMOS3r8eZmvec5aTWA</string>
 	<key>GCM_SENDER_ID</key>
-	<string>772498197174</string>
+	<string>28958942252</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.mycompany.speak3</string>
+	<string>com.mycompany.speak6</string>
 	<key>PROJECT_ID</key>
-	<string>speakdata-f1d03</string>
+	<string>speak-d3a4f</string>
 	<key>STORAGE_BUCKET</key>
-	<string>speakdata-f1d03.appspot.com</string>
+	<string>speak-d3a4f.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -31,6 +31,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:772498197174:ios:f9d47d37d71a0af6023417</string>
+	<string>1:28958942252:ios:bb9e3e28d8c5daa4289d89</string>
 </dict>
 </plist>

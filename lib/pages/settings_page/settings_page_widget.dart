@@ -110,7 +110,27 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget>
         ),
       ],
     ),
-    'buttonOnPageLoadAnimation': AnimationInfo(
+    'buttonOnPageLoadAnimation1': AnimationInfo(
+      trigger: AnimationTrigger.onPageLoad,
+      effects: [
+        VisibilityEffect(duration: 400.ms),
+        FadeEffect(
+          curve: Curves.easeInOut,
+          delay: 400.ms,
+          duration: 600.ms,
+          begin: 0.0,
+          end: 1.0,
+        ),
+        MoveEffect(
+          curve: Curves.easeInOut,
+          delay: 400.ms,
+          duration: 600.ms,
+          begin: Offset(0.0, 60.0),
+          end: Offset(0.0, 0.0),
+        ),
+      ],
+    ),
+    'buttonOnPageLoadAnimation2': AnimationInfo(
       trigger: AnimationTrigger.onPageLoad,
       effects: [
         VisibilityEffect(duration: 400.ms),
@@ -144,9 +164,9 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget>
       });
     });
 
-    _model.settingsNameController ??=
+    _model.settingsNameController1 ??=
         TextEditingController(text: currentUserDisplayName);
-    _model.textController2 ??=
+    _model.settingsNameController2 ??=
         TextEditingController(text: currentUserDisplayName);
     setupAnimations(
       animationsMap.values.where((anim) =>
@@ -260,7 +280,7 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget>
                                   image: Image.network(
                                     valueOrDefault<String>(
                                       currentUserPhoto,
-                                      'https://mybroadband.co.za/news/wp-content/uploads/2017/04/Twitter-profile-picture.jpg',
+                                      'https://i.postimg.cc/mkGZByjZ/Twitter-profile-picture.webp',
                                     ),
                                   ).image,
                                 ),
@@ -484,7 +504,7 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget>
                                   13.0, 0.0, 8.0, 0.0),
                               child: AuthUserStreamWidget(
                                 builder: (context) => TextFormField(
-                                  controller: _model.settingsNameController,
+                                  controller: _model.settingsNameController1,
                                   autofocus: true,
                                   obscureText: false,
                                   decoration: InputDecoration(
@@ -532,7 +552,7 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget>
                                         lineHeight: 2.0,
                                       ),
                                   validator: _model
-                                      .settingsNameControllerValidator
+                                      .settingsNameController1Validator
                                       .asValidator(context),
                                 ),
                               ),
@@ -596,12 +616,13 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget>
                               13.0, 0.0, 8.0, 0.0),
                           child: AuthUserStreamWidget(
                             builder: (context) => TextFormField(
-                              controller: _model.textController2,
+                              controller: _model.settingsNameController2,
                               autofocus: true,
                               obscureText: false,
                               decoration: InputDecoration(
                                 labelStyle:
                                     FlutterFlowTheme.of(context).labelMedium,
+                                hintText: 'Commencer à écrire...',
                                 hintStyle:
                                     FlutterFlowTheme.of(context).labelMedium,
                                 enabledBorder: UnderlineInputBorder(
@@ -635,69 +656,135 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget>
                                 ),
                               ),
                               style: FlutterFlowTheme.of(context).bodyMedium,
-                              validator: _model.textController2Validator
+                              validator: _model.settingsNameController2Validator
                                   .asValidator(context),
                             ),
                           ),
                         ),
                       ),
                     ),
-                  FFButtonWidget(
-                    onPressed: () async {
-                      if (_model.uploadedFileUrl == '') {
-                        await currentUserReference!
-                            .update(createUsersRecordData(
-                          displayName: _model.settingsNameController.text,
-                        ));
-                      } else {
-                        await currentUserReference!
-                            .update(createUsersRecordData(
-                          photoUrl: _model.uploadedFileUrl,
-                          displayName: _model.settingsNameController.text,
-                        ));
-                      }
+                  if (responsiveVisibility(
+                    context: context,
+                    desktop: false,
+                  ))
+                    FFButtonWidget(
+                      onPressed: () async {
+                        if (_model.uploadedFileUrl == '') {
+                          await currentUserReference!
+                              .update(createUsersRecordData(
+                            displayName: _model.settingsNameController1.text,
+                          ));
+                        } else {
+                          await currentUserReference!
+                              .update(createUsersRecordData(
+                            photoUrl: _model.uploadedFileUrl,
+                            displayName: _model.settingsNameController1.text,
+                          ));
+                        }
 
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
-                          content: Text(
-                            'Mise à jour Speak',
-                            style: TextStyle(
-                              color: FlutterFlowTheme.of(context).primaryText,
-                            ),
-                          ),
-                          duration: Duration(milliseconds: 4000),
-                          backgroundColor:
-                              FlutterFlowTheme.of(context).secondary,
-                        ),
-                      );
-                      context.safePop();
-                    },
-                    text: 'Valider',
-                    options: FFButtonOptions(
-                      width: 200.0,
-                      height: 50.0,
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      iconPadding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: FlutterFlowTheme.of(context).primaryText,
-                      textStyle:
-                          FlutterFlowTheme.of(context).titleSmall.override(
-                                fontFamily: 'Readex Pro',
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(
+                              'Mise à jour Speak',
+                              style: TextStyle(
+                                color: FlutterFlowTheme.of(context).primaryText,
                               ),
-                      elevation: 0.0,
-                      borderSide: BorderSide(
-                        width: 1.0,
+                            ),
+                            duration: Duration(milliseconds: 4000),
+                            backgroundColor:
+                                FlutterFlowTheme.of(context).secondary,
+                          ),
+                        );
+                        context.safePop();
+                      },
+                      text: 'Valider',
+                      options: FFButtonOptions(
+                        width: 200.0,
+                        height: 50.0,
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        iconPadding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        color: FlutterFlowTheme.of(context).primaryText,
+                        textStyle:
+                            FlutterFlowTheme.of(context).titleSmall.override(
+                                  fontFamily: 'Readex Pro',
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                ),
+                        elevation: 0.0,
+                        borderSide: BorderSide(
+                          width: 1.0,
+                        ),
+                        borderRadius: BorderRadius.circular(38.0),
+                        hoverColor: Color(0xFF000080),
+                        hoverTextColor: Colors.white,
+                        hoverElevation: 4.0,
                       ),
-                      borderRadius: BorderRadius.circular(38.0),
-                      hoverColor: Color(0xFF000080),
-                      hoverTextColor: Colors.white,
-                      hoverElevation: 4.0,
-                    ),
-                  ).animateOnPageLoad(
-                      animationsMap['buttonOnPageLoadAnimation']!),
+                    ).animateOnPageLoad(
+                        animationsMap['buttonOnPageLoadAnimation1']!),
+                  if (responsiveVisibility(
+                    context: context,
+                    phone: false,
+                    tablet: false,
+                    tabletLandscape: false,
+                  ))
+                    FFButtonWidget(
+                      onPressed: () async {
+                        if (_model.uploadedFileUrl == '') {
+                          await currentUserReference!
+                              .update(createUsersRecordData(
+                            displayName: _model.settingsNameController2.text,
+                          ));
+                        } else {
+                          await currentUserReference!
+                              .update(createUsersRecordData(
+                            photoUrl: _model.uploadedFileUrl,
+                            displayName: _model.settingsNameController2.text,
+                          ));
+                        }
+
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(
+                              'Mise à jour Speak',
+                              style: TextStyle(
+                                color: FlutterFlowTheme.of(context).primaryText,
+                              ),
+                            ),
+                            duration: Duration(milliseconds: 4000),
+                            backgroundColor:
+                                FlutterFlowTheme.of(context).secondary,
+                          ),
+                        );
+                        context.safePop();
+                      },
+                      text: 'Valider',
+                      options: FFButtonOptions(
+                        width: 200.0,
+                        height: 50.0,
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        iconPadding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        color: FlutterFlowTheme.of(context).primaryText,
+                        textStyle:
+                            FlutterFlowTheme.of(context).titleSmall.override(
+                                  fontFamily: 'Readex Pro',
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                ),
+                        elevation: 0.0,
+                        borderSide: BorderSide(
+                          width: 1.0,
+                        ),
+                        borderRadius: BorderRadius.circular(38.0),
+                        hoverColor: Color(0xFF000080),
+                        hoverTextColor: Colors.white,
+                        hoverElevation: 4.0,
+                      ),
+                    ).animateOnPageLoad(
+                        animationsMap['buttonOnPageLoadAnimation2']!),
                 ],
               ),
             ),

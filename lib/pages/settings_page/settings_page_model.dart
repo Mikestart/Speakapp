@@ -28,11 +28,11 @@ class SettingsPageModel extends FlutterFlowModel {
   String uploadedFileUrl = '';
 
   // State field(s) for settingsName widget.
-  TextEditingController? settingsNameController;
-  String? Function(BuildContext, String?)? settingsNameControllerValidator;
-  // State field(s) for TextField widget.
-  TextEditingController? textController2;
-  String? Function(BuildContext, String?)? textController2Validator;
+  TextEditingController? settingsNameController1;
+  String? Function(BuildContext, String?)? settingsNameController1Validator;
+  // State field(s) for settingsName widget.
+  TextEditingController? settingsNameController2;
+  String? Function(BuildContext, String?)? settingsNameController2Validator;
 
   /// Initialization and disposal methods.
 
@@ -40,8 +40,8 @@ class SettingsPageModel extends FlutterFlowModel {
 
   void dispose() {
     unfocusNode.dispose();
-    settingsNameController?.dispose();
-    textController2?.dispose();
+    settingsNameController1?.dispose();
+    settingsNameController2?.dispose();
   }
 
   /// Action blocks are added here.

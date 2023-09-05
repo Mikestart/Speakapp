@@ -1,4 +1,4 @@
-package com.mycompany.speak3
+package com.mycompany.speak6
 
 import io.flutter.embedding.android.FlutterActivity
 

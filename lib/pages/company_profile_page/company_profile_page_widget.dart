@@ -759,9 +759,9 @@ class _CompanyProfilePageWidgetState extends State<CompanyProfilePageWidget>
                                                                             buttonSize:
                                                                                 40.0,
                                                                             fillColor:
-                                                                                Colors.white,
+                                                                                Color(0x00FFFFFF),
                                                                             hoverColor:
-                                                                                Colors.white,
+                                                                                Color(0x00FFFFFF),
                                                                             hoverIconColor:
                                                                                 Color(0xDACB272E),
                                                                             icon:
@@ -808,14 +808,14 @@ class _CompanyProfilePageWidgetState extends State<CompanyProfilePageWidget>
                                                                             buttonSize:
                                                                                 40.0,
                                                                             fillColor:
-                                                                                Colors.white,
+                                                                                Color(0x00FFFFFF),
                                                                             hoverColor:
-                                                                                Colors.white,
+                                                                                Color(0x00FFFFFF),
                                                                             hoverIconColor:
                                                                                 Color(0xDACB272E),
                                                                             icon:
                                                                                 Icon(
-                                                                              Icons.delete_outline,
+                                                                              Icons.delete,
                                                                               color: Colors.black,
                                                                               size: 24.0,
                                                                             ),
@@ -1120,9 +1120,9 @@ class _CompanyProfilePageWidgetState extends State<CompanyProfilePageWidget>
                                                                           buttonSize:
                                                                               40.0,
                                                                           fillColor:
-                                                                              Colors.white,
+                                                                              Color(0x00FFFFFF),
                                                                           hoverColor:
-                                                                              Colors.white,
+                                                                              Color(0x00FFFFFF),
                                                                           hoverIconColor:
                                                                               Color(0xDACB272E),
                                                                           icon:
@@ -1297,14 +1297,14 @@ class _CompanyProfilePageWidgetState extends State<CompanyProfilePageWidget>
                                                                           buttonSize:
                                                                               40.0,
                                                                           fillColor:
-                                                                              Colors.white,
+                                                                              Color(0x00FFFFFF),
                                                                           hoverColor:
-                                                                              Colors.white,
+                                                                              Color(0x00FFFFFF),
                                                                           hoverIconColor:
                                                                               Color(0xDACB272E),
                                                                           icon:
                                                                               Icon(
-                                                                            Icons.delete_outline,
+                                                                            Icons.delete,
                                                                             color:
                                                                                 Colors.black,
                                                                             size:
@@ -1604,14 +1604,14 @@ class _CompanyProfilePageWidgetState extends State<CompanyProfilePageWidget>
                                                                             buttonSize:
                                                                                 40.0,
                                                                             fillColor:
-                                                                                Colors.white,
+                                                                                Color(0x00FFFFFF),
                                                                             hoverColor:
-                                                                                Colors.white,
+                                                                                Color(0x42FFFFFF),
                                                                             hoverIconColor:
                                                                                 Color(0xDACB272E),
                                                                             icon:
                                                                                 Icon(
-                                                                              Icons.delete_outlined,
+                                                                              Icons.delete,
                                                                               color: FlutterFlowTheme.of(context).primaryText,
                                                                               size: 25.0,
                                                                             ),
@@ -1870,7 +1870,7 @@ class _CompanyProfilePageWidgetState extends State<CompanyProfilePageWidget>
                                                                             fillColor:
                                                                                 Color(0x00FFFFFF),
                                                                             hoverColor:
-                                                                                Colors.white,
+                                                                                Color(0x00FFFFFF),
                                                                             hoverIconColor:
                                                                                 Color(0xDACB272E),
                                                                             icon:

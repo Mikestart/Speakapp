@@ -173,7 +173,10 @@ class _CompanysListPageWidgetState extends State<CompanysListPageWidget> {
                         Align(
                           alignment: AlignmentDirectional(0.0, 1.0),
                           child: StreamBuilder<List<UsersRecord>>(
-                            stream: queryUsersRecord(),
+                            stream: queryUsersRecord(
+                              queryBuilder: (usersRecord) => usersRecord
+                                  .where('isAdmin', isEqualTo: false),
+                            ),
                             builder: (context, snapshot) {
                               // Customize what your widget looks like when it's loading.
                               if (!snapshot.hasData) {
@@ -246,7 +249,10 @@ class _CompanysListPageWidgetState extends State<CompanysListPageWidget> {
                                                         EdgeInsetsDirectional
                                                             .fromSTEB(40.0, 0.0,
                                                                 0.0, 0.0),
-                                                    child: Container(
+                                                    child: AnimatedContainer(
+                                                      duration: Duration(
+                                                          milliseconds: 140),
+                                                      curve: Curves.easeInOut,
                                                       width: MediaQuery.sizeOf(
                                                                   context)
                                                               .width *
@@ -256,9 +262,20 @@ class _CompanysListPageWidgetState extends State<CompanysListPageWidget> {
                                                               .height *
                                                           0.3,
                                                       decoration: BoxDecoration(
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .secondaryBackground,
+                                                        color:
+                                                            Color(0x00FFFFFF),
+                                                        boxShadow: [
+                                                          BoxShadow(
+                                                            blurRadius: 3.0,
+                                                            color: Color(
+                                                                0x0F000000),
+                                                            offset: Offset(
+                                                                3.0, 4.0),
+                                                          )
+                                                        ],
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(8.0),
                                                       ),
                                                       child: Row(
                                                         mainAxisSize:
@@ -312,8 +329,11 @@ class _CompanysListPageWidgetState extends State<CompanysListPageWidget> {
                                                                         ),
                                                                         child: Image
                                                                             .network(
-                                                                          columnUsersRecord
-                                                                              .photoUrl,
+                                                                          valueOrDefault<
+                                                                              String>(
+                                                                            columnUsersRecord.photoUrl,
+                                                                            'https://i.postimg.cc/mkGZByjZ/Twitter-profile-picture.webp',
+                                                                          ),
                                                                           fit: BoxFit
                                                                               .cover,
                                                                         ),
@@ -336,7 +356,7 @@ class _CompanysListPageWidgetState extends State<CompanysListPageWidget> {
                                                                               child: Column(
                                                                                 mainAxisSize: MainAxisSize.min,
                                                                                 mainAxisAlignment: MainAxisAlignment.center,
-                                                                                crossAxisAlignment: CrossAxisAlignment.center,
+                                                                                crossAxisAlignment: CrossAxisAlignment.start,
                                                                                 children: [
                                                                                   Expanded(
                                                                                     child: Align(
@@ -404,7 +424,7 @@ class _CompanysListPageWidgetState extends State<CompanysListPageWidget> {
                                                                           },
                                                                           child:
                                                                               Icon(
-                                                                            Icons.delete_outline_outlined,
+                                                                            Icons.delete,
                                                                             color:
                                                                                 Color(0xA2CB272E),
                                                                             size:
@@ -503,8 +523,12 @@ class _CompanysListPageWidgetState extends State<CompanysListPageWidget> {
                                                                       ),
                                                                       child: Image
                                                                           .network(
-                                                                        columnUsersRecord
-                                                                            .photoUrl,
+                                                                        valueOrDefault<
+                                                                            String>(
+                                                                          columnUsersRecord
+                                                                              .photoUrl,
+                                                                          'https://i.postimg.cc/mkGZByjZ/Twitter-profile-picture.webp',
+                                                                        ),
                                                                         fit: BoxFit
                                                                             .cover,
                                                                       ),
@@ -534,7 +558,7 @@ class _CompanysListPageWidgetState extends State<CompanysListPageWidget> {
                                                                                 Column(
                                                                               mainAxisSize: MainAxisSize.min,
                                                                               mainAxisAlignment: MainAxisAlignment.center,
-                                                                              crossAxisAlignment: CrossAxisAlignment.center,
+                                                                              crossAxisAlignment: CrossAxisAlignment.start,
                                                                               children: [
                                                                                 Expanded(
                                                                                   child: Align(
